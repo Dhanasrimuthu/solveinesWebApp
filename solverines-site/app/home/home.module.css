@@ -1,0 +1,269 @@
+/* Container Styles */
+.bleft {
+    display: inline-block; /* Ensures it behaves like a block to allow styling */
+    width: 50px; /* Adjust the length of the line */
+    height: 2px; /* Set the thickness of the line */
+    background-color: black; /* Adjust the color as needed */
+    vertical-align: middle; /* Aligns vertically within inline content */
+    margin: 0 auto; /* Center the line horizontally */
+    position: relative; /* Ensures precise positioning if needed */
+    margin-right: 2%;
+    color: rgb(116,40,148);
+  }
+
+.slideshowHeader {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+ .imageContainer{
+    width: 20%;
+    height: 100vh;
+ } 
+  .imageWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation-fill-mode: forwards;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    opacity: 0;
+  }
+  
+  /* Hide Inactive Images */
+  .hidden {
+    opacity: 0;
+    z-index: -1;
+  }
+  
+  /* Image Animations */
+  .imageFromTop {
+    opacity: 1;
+    z-index: 1;
+    animation: slideInFromTop 0.4s ease-in-out forwards;
+  }
+  
+  .imageFromBottom {
+    opacity: 1;
+    z-index: 1;
+    animation: slideInFromBottom 0.4s ease-in-out forwards;
+  }
+  
+  /* Captions */
+  .caption {
+    position: absolute;
+    padding-top: 5%;
+    bottom: 20%;
+    left: 35%;
+    opacity: 0;
+    transform: translateX(-50%);
+    animation-fill-mode: forwards;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .caption.visible {
+    animation: fadeInFromLeft 1s ease-in-out forwards;
+  }
+  
+  .caption.fadeOut {
+    animation: fadeOutToLeft 1s ease-in-out forwards;
+  }
+  
+  /* Keyframe Animations */
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromBottom {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeOutToLeft {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+  }
+  
+  .section1{
+    width: 100%;
+    max-width: 100%;
+    border: 2px solid black;
+    position: relative;
+  }
+  .s1grid{
+    padding: 4%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: rgb(116,40,148);
+    color: white;
+  }
+  .s1span{
+    font-weight: bolder;
+    padding-bottom: 2%;
+  }
+
+  .section2{
+    border: 1px solid black;
+    height: 100;
+    width: 100%;
+    position: relative;
+  }
+  
+/* Container for the row */
+.row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    position: relative;
+    flex-wrap: wrap; 
+    padding: 5%;
+  }
+  
+ 
+  .leftside {
+    flex: 1;
+    box-sizing: border-box; 
+    padding: 2%;
+  }
+  .globe{
+    flex: 1;
+    box-sizing: border-box; 
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 1000px) {
+    .leftside, .globe {
+      flex: 0 0 100%;
+      padding: 2%;
+    }
+  }
+  
+  
+  .subTitle {
+    font-size: 18px;
+    color: rgb(116,40,148);
+    margin-bottom: 10px;
+  }
+  
+  .secTitle {
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 20px;
+  }
+  
+  .secDesc {
+    font-size: 16px;
+    color: #9ca3a5;
+  }
+
+
+  .gridItem {
+    padding: 16px; /* Equivalent to p: 3 */
+    margin: 16px; /* Equivalent to mx: 3 */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Equivalent to borderRadius: 2 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    transition: transform 0.3s, background-image 0.3s;
+  }
+  
+  .gridItem:hover {
+    transform: scale(1.05);
+    background-image: url('/images/bg/Frame152.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+  }
+ 
+  .s3Title {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    /* border: 1px solid black; */
+    min-height: 20%;
+    display: block; /* or block */
+  }
+  
+  .s3desc {
+    /* border: 1px solid black; */
+    min-height: 30%;
+    display: block;
+    color: #9ca3a5;
+    font-size:small;
+  }
+
+  .button {
+    margin-left: 5%;
+    background-color: rgb(116,40,148); /* Initial background color */
+    color: white; /* Initial text color */
+    border: 1px solid rgb(116,40,148); /* Border color to match the button */
+    padding: 8px 16px;
+    transition: background-color 0.3s, color 0.3s;
+    align-items: center;
+  }
+  
+  .button:hover{
+    background-color: white; /* Change to white when hovered */
+    color:rgb(116,40,148) /* Text color changes to blue on hover */
+  }
+  .s3img{
+    background-image: url('/images/bg/3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    padding: 10%;
+    padding-bottom: 2%;
+  }
+  .section3{
+    background-color: #f9fcfd;
+  }
+
+  .s5img{
+    background-image: url('/images/bg/halfcircle.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+  }
+  .backgroundBox {
+    background-image: url('/images/bg/halfcircle.png');
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+  }
